@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Animated,
+  Alert,
   Dimensions,
   RefreshControl,
 } from 'react-native';
@@ -213,7 +214,7 @@ export default function HomeScreen({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.quickAction}
-            onPress={() => navigation.navigate('Notifications')}
+            onPress={() => Alert.alert('Analytics', 'Detailed analytics dashboard coming soon!')}
             activeOpacity={0.7}
           >
             <LinearGradient colors={['#22C55E', '#15803D']} style={styles.quickActionIcon}>
@@ -347,7 +348,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative',
   },
   notifBadge: {
     position: 'absolute',

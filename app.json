@@ -27,14 +27,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "Allow Passion App to access your photos to set product images."
-        }
-      ]
-    ]
+    }
   }
 }

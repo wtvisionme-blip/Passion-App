@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AppContext = createContext(null);
@@ -398,12 +398,22 @@ export function AppProvider({ children }) {
     await saveNotifications([]);
   }, []);
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = useMemo(
+    () => notifications.filter(n => !n.read).length,
+    [notifications]
+  );
 
-  const myProducts = products.filter(p => p.creatorId === user?.id);
-  const publishedProducts = products.filter(p => p.isPublished);
+  const myProducts = useMemo(
+    () => products.filter(p => p.creatorId === user?.id),
+    [products, user?.id]
+  );
 
-  const value = {
+  const publishedProducts = useMemo(
+    () => products.filter(p => p.isPublished),
+    [products]
+  );
+
+  const value = useMemo(() => ({
     user,
     products,
     myProducts,
@@ -429,7 +439,14 @@ export function AppProvider({ children }) {
     markNotificationRead,
     markAllNotificationsRead,
     clearNotifications,
-  };
+  }), [
+    user, products, myProducts, publishedProducts, notifications, unreadCount,
+    wishlist, cart, isLoading,
+    login, signup, logout, updateUser,
+    addProduct, updateProduct, deleteProduct, togglePublish,
+    toggleWishlist, isWishlisted, addToCart, removeFromCart, isInCart,
+    markNotificationRead, markAllNotificationsRead, clearNotifications,
+  ]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

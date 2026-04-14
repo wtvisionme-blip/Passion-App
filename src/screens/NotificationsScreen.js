@@ -47,7 +47,7 @@ function NotifItem({ item, onPress }) {
 function getIconBg(type) {
   switch (type) {
     case 'sale': return `${colors.success}20`;
-    case 'review': return `#F59E0B20`;
+    case 'review': return `${colors.warning}20`;
     case 'milestone': return `${colors.primary}20`;
     case 'product': return `${colors.accent}20`;
     default: return colors.surface;

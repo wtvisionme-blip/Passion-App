@@ -86,12 +86,12 @@ export default function ProfileScreen({ navigation }) {
   const totalSales = myProducts.reduce((sum, p) => sum + p.sales, 0);
   const published = myProducts.filter(p => p.isPublished).length;
 
-  const initials = user?.name
-    ?.split(' ')
-    .map(n => n[0])
+  const initials = ((user?.name || '')
+    .split(' ')
+    .map(n => n[0] || '')
     .join('')
     .toUpperCase()
-    .slice(0, 2) || 'U';
+    .slice(0, 2)) || 'U';
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>

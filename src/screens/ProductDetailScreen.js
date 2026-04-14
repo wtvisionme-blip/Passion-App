@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Alert,
   Share,
-  Animated,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
@@ -445,13 +444,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   sectionTitle: {
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: '700',
     color: colors.textSecondary,
     marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
-    fontSize: 12,
   },
   description: {
     fontSize: 15,

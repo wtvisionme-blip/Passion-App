@@ -1,2 +1,2 @@
 # Passion-App
-App for digotal products creation
+App for digital products creation

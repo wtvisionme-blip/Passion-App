@@ -14,6 +14,7 @@ Six SOP templates for automating recurring work with Claude. Each template lives
 | 4 | [Competitor Intelligence](templates/04-competitor-intelligence.md) | Market research |
 | 5 | [Inbox Watchdog](templates/05-inbox-watchdog.md) | Email routine automation |
 | 6 | [Content Repurposer](templates/06-content-repurposer.md) | Social media content |
+| 7 | [AI Compliance Discovery](templates/07-ai-compliance-discovery.md) | Client discovery call questions |
 
 ### Quick Trigger Phrases
 - `"Run Digital Cleanup on [FOLDER]"`

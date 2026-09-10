@@ -11,16 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../theme/colors';
 import { useApp } from '../context/AppContext';
-
-function timeAgo(dateString) {
-  const now = new Date();
-  const date = new Date(dateString);
-  const diff = (now - date) / 1000;
-  if (diff < 60) return 'Just now';
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-  return `${Math.floor(diff / 86400)}d ago`;
-}
+import { timeAgo } from '../utils/formatters';
 
 function NotifItem({ item, onPress }) {
   return (

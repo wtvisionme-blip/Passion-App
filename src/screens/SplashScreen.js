@@ -4,12 +4,9 @@ import {
   Text,
   StyleSheet,
   Animated,
-  Dimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../theme/colors';
-
-const { width, height } = Dimensions.get('window');
 
 export default function SplashScreen() {
   const fadeAnim = useRef(new Animated.Value(0)).current;

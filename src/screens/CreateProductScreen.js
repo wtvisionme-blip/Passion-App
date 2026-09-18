@@ -84,7 +84,7 @@ export default function CreateProductScreen({ navigation }) {
     }
     setIsLoading(true);
     try {
-      const product = await addProduct({
+      await addProduct({
         title: title.trim(),
         description: description.trim() || 'No description yet',
         price: parseFloat(price) || 0,
